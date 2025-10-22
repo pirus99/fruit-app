@@ -1,27 +1,27 @@
 fruits = [
   {
-    "Name": "Apfel",
-    "Gewicht": 150,
-    "Farbe": "Rot"
+    "name": "Apple",
+    "weight": 150,
+    "color": "Red"
   },
   {
-    "Name": "Banane",
-    "Gewicht": 120,
-    "Farbe": "Gelb"
+    "name": "Banana",
+    "weight": 120,
+    "color": "Yellow"
   },
   {
-    "Name": "Erdbeere",
-    "Gewicht": 20,
-    "Farbe": "Rot"
+    "name": "Strawberry",
+    "weight": 20,
+    "color": "Red"
   },
   {
-    "Name": "Orange",
-    "Gewicht": 200,
-    "Farbe": "Orange"
+    "name": "Orange",
+    "weight": 200,
+    "color": "Orange"
   },
   {
-    "Name": "Blaubeere",
-    "Gewicht": 2,
-    "Farbe": "Blau"
+    "name": "Blueberry",
+    "weight": 2,
+    "color": "Blue"
   }
 ]
