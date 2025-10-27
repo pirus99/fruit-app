@@ -2,20 +2,46 @@
 {% load static %}
 
 {% block content %}
-<h1>Liste der Früchte</h1>
-<ul>
+<div class="fruit-list">
+    <h1>Die Fruitlist:</h1>
     {% for fruit in fruits %}
+    {% if fruit.ordered %}
     {% with 'fruit_app/img/'|add:fruit.name|lower|add:'.jpg' as img_path %}
-    <li class="list-element">
+    <div class="list-element-ordered">
         <div class="img-wrapper">
             <img class="fruit_image-sm" src="{% static img_path %}" alt="{{ fruit.name }}">
         </div>
-        {{ fruit.name }} -
-        Farbe: {{ fruit.color }} -
-        Gewicht: {{ fruit.weight }}g
-
-    </li>
+        <ul>
+            <li>{{ fruit.name }}</li>
+            <li>Farbe: {{ fruit.color }}</li>
+            <li>Gewicht: {{ fruit.weight }}g</li>
+        </ul>
+        <div class="check-wrapper">Bestellt: <br>
+            <input type="checkbox" name="ordered" id="ordered_{{ fruit.id }}" disabled checked>
+        </div>
+    </div>
     {% endwith %}
+    {% endif %}
     {% endfor %}
-</ul>
+
+    {% for fruit in fruits %}
+    {% if not fruit.ordered %}
+    {% with 'fruit_app/img/'|add:fruit.name|lower|add:'.jpg' as img_path %}
+    <div class="list-element-not-ordered">
+        <div class="img-wrapper">
+            <img class="fruit_image-sm" src="{% static img_path %}" alt="{{ fruit.name }}">
+        </div>
+        <ul>
+            <li>{{ fruit.name }}</li>
+            <li>Farbe: {{ fruit.color }}</li>
+            <li>Gewicht: {{ fruit.weight }}g</li>
+        </ul>
+        <div class="check-wrapper">Bestellt: <br>
+            <input type="checkbox" name="not-ordered" id="not-ordered_{{ fruit.id }}" disabled>
+        </div>
+    </div>
+    {% endwith %}
+    {% endif %}
+    {% endfor %}
+</div>
 {% endblock %}
