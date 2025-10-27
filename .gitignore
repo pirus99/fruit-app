@@ -4,6 +4,9 @@ __pycache__/
 *$py.class
 .vscode
 
+#img folder
+fruit_app/static/fruit_app/img
+
 # C extensions
 *.so
 

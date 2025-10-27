@@ -1,0 +1,20 @@
+.fruit_image {
+    width: 300px;
+    height: auto;
+}
+
+.list-element {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.img-wrapper {
+    width: 300px;
+}
+
+.fruit_image-sm {
+    width: auto;
+    height: 150px;
+}

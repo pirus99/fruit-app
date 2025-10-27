@@ -1,0 +1,21 @@
+{% extends "fruit_app/base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Liste der Früchte</h1>
+<ul>
+    {% for fruit in fruits %}
+    {% with 'fruit_app/img/'|add:fruit.name|lower|add:'.jpg' as img_path %}
+    <li class="list-element">
+        <div class="img-wrapper">
+            <img class="fruit_image-sm" src="{% static img_path %}" alt="{{ fruit.name }}">
+        </div>
+        {{ fruit.name }} -
+        Farbe: {{ fruit.color }} -
+        Gewicht: {{ fruit.weight }}g
+
+    </li>
+    {% endwith %}
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -10,4 +10,4 @@ from .fruits_db import fruits
 
 class FruitView(View):
     def get(self, request):
-        return JsonResponse(fruits, safe=False)
+        return render(request, 'fruit_app/fruitlist.html', {'fruits': fruits})
